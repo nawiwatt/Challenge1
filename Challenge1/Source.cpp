@@ -7,12 +7,23 @@ float Totalsq(int x, int y, float z, float zz);
 int main() {
 	int a, b, N;
 	float c, e, f, Sd;
-	scanf("%d%d", &a, &b);
+	scanf_s("%d%d", &a, &b);
 
-	if (a > b) {
+	if (a > b)
+	{
 		N = a - b + 1;
 	}
-	else N = b - a + 1;
+	else if (a < b)
+	{
+		N = b - a + 1;
+	}
+	else
+	{
+		printf("%d", a);
+		printf("\nAverage = %d.0", a);
+		printf("\nSD = 0.00");
+		return 0;
+	}
 
 	c = Total(a, b);
 	e = c / N;
